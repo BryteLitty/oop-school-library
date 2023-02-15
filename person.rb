@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
+# Person class
 class Person
-  def initialize(age, _parent_permission = true, name = 'Unknown')
+  def initialize(age, parent_permission: true, name: 'Unknown')
     @id = Random.rand(1..1000)
     @name = name
     @age = age
+    @parent_permission = parent_permission
   end
 
-  # for both getters and setters
   attr_accessor :id
   attr_accessor :name
   attr_accessor :age
