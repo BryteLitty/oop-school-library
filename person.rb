@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Person class
 class Person
   def initialize(age, parent_permission: true, name: 'Unknown')
@@ -19,7 +17,7 @@ class Person
 
   private
 
-  def is_of_age?
+  def of_age?
     @age >= 18
   end
 end
