@@ -7,9 +7,13 @@ class Person
     @parent_permission = parent_permission
   end
 
-  attr_accessor :id
-  attr_accessor :name
-  attr_accessor :age
+  attr_writer :id
+  attr_writer :name
+  attr_writer :age
+
+  attr_reader :id
+  attr_reader :name
+  attr_reader :age
 
   def can_use_services?
     is_of_age? || @parent_permission
