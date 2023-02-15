@@ -3,7 +3,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Ruby Enumerables ](#-ruby-enumerables-)
+- [📖 OOP School Library ](#-oop-school-library-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -18,9 +18,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Ruby Enumerables <a name="about-project"></a>
+# 📖 OOP School Library <a name="about-project"></a>
 
-**Ruby Enumerables** is a simple Ruby project that demonstrates how to use module in Ruby, it shows how to implement a subset of an enumerable function.
+**OOP School Library** is a simple Ruby project for a school library for keeping records of students who borrows book from them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -36,8 +36,8 @@
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-- **A Ruby method to filter a list of Items**
-- **A Ruby method to check for enumerables**
+- **Add new students and teachers**
+- **Add new books**
 
 <!-- GETTING STARTED -->
 
@@ -49,7 +49,6 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 - [Ruby](https://www.ruby-lang.org/en/)
 
-- ruby morsecode.rb
 
 <!--
 Example command:
@@ -64,18 +63,18 @@ Example command:
 Clone this repository to your desired folder:
 1. Clone the repository
 ```
-git clone git@github.com:Tamunokuro/Enumerable.git
+git clone git@github.com/BryteLitty/oop-school-library.git
 ```
 
 2. CD into the project directory
 ```
-cd Enumerable
+cd oop-school-library
 ```
 
-3. Run the code
+<!-- 3. Run the code
 ```
 Run ruby mylist.rb
-```
+``` -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -84,11 +83,6 @@ Run ruby mylist.rb
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Author1**
-
-- GitHub: [@Tamunokuro](https://github.com/Tamunokuro)
-- LinkedIn: [@Joshua Blue-Jack](https://linkedin.com/in/joshua-blue-jack)
-
-👤 **Author2**
 
 - Github: [@BryteLitty](https://github.com/Bryte)
 - Twitter: [@bryteLitty](https://twitter.come/BryteLitty)
@@ -99,7 +93,9 @@ Run ruby mylist.rb
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></>
-- [ ] Add a method to check for digits and odd numbers
+- [ ] Save records of who borrowed a given book and when
+- [ ] Integrate UI for easy manipulation
+- [ ] Integrate Database
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
