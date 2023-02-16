@@ -6,7 +6,11 @@ class Student < Person
 
   def initialize(age, _classroom, parent_permission: true, name: 'Unknown')
     super(age, name: name, parent_permission: parent_permission)
-    @classroom = nil
+    @classroom = classroom
+  end
+
+  def belongs_to_classroom?(classroom)
+    @classroom == classroom
   end
 
   def play_hooky
