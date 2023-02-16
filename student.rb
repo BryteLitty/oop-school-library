@@ -1,10 +1,9 @@
-# frozen_string_literal: true
+require_relative 'person'
 
-require './person.rb'
-
+# inherit form person
 class Student < Person
-  def initialize(age, classroom, parent_permission = true, name = 'Unknown')
-    super(age, parent_permission = parent_permission, name = name)
+  def initialize(age, classroom, parent_permission: true, name: 'Unknown')
+    super(age, name: name, parent_permission: parent_permission)
     @classroom = classroom
   end
 
