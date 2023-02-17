@@ -1,57 +1,51 @@
 require_relative 'app'
 
 def main
-  library = App.new
+  app = App.new
 
   loop do
-    puts 'Please choose an option:'
-    puts '1. List all books'
-    puts '2. Add a book'
-    puts '3. Rent a book'
-    puts '4. Return a book'
-    puts '5. List all rentals'
-    puts '6. Quit'
+    puts 'What would you like to do?'
+    puts '1 - List all books'
+    puts '2 - Add a book'
+    puts '3 - Remove a book'
+    puts '4 - Rent a book'
+    puts '5 - List rentals by person'
+    puts '6 - Exit'
 
-    input = gets.chomp.to_i
+    choice = gets.chomp.to_i
 
-    case input
+    case choice
     when 1
-      library.list_all_books
+      app.list_books
     when 2
-      puts 'Enter the tittle of the book:'
+      puts 'Enter book title:'
       title = gets.chomp
-      puts 'Enter the author of the book:'
+      puts 'Enter book author:'
       author = gets.chomp
-      puts 'Enter the publication date of the book:'
+      puts 'Enter book publication date (YYYY-MM-DD):'
       date = gets.chomp
-      library.create_book(title, author, date)
+      app.add_book(title, author, date)
     when 3
-      puts 'Enter the ID of the person who wants to rent the book:'
-      person_id = gets.chomp.to_i
-      puts 'Enter the ID of the book to rent:'
-      book_id = gets.chomp.to_i
-      puts 'Enter the date the rental will start (yyyy-mm-dd):'
-      date = gets.chomp
-      library.create_rental(person_id, book_id, date)
+      puts 'Enter book id to remove:'
+      id = gets.chomp.to_i
+      app.remove_book(id)
     when 4
-      puts 'Enter the ID of the person who to return the book:'
-      person_id = gets.chomp.to_i
-      puts 'Enter the ID of the book to return:'
+      puts 'Enter book id to rent:'
       book_id = gets.chomp.to_i
-      puts 'Enter the date the rental will end (yyyy-mm-dd):'
-      library.return_book(person_id, book_id, date)
-    when 5
-      puts 'Enter the ID of the person to list rentals for:'
+      puts 'Enter person id:'
       person_id = gets.chomp.to_i
-      library.list_rentals_by_person(person_id)
+      app.rent_book(book_id, person_id)
+    when 5
+      puts 'Enter person id:'
+      person_id = gets.chomp.to_i
+      app.list_rentals_by_person(person_id)
     when 6
+      puts 'Goodbye!'
       break
     else
-      puts 'Invalid option, please try again'
+      puts 'Invalid choice'
     end
   end
 end
 
-app = App.new
 main
-app.run
