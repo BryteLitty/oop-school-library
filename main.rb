@@ -18,7 +18,7 @@ def main
     when 1
       library.list_all_books
     when 2
-      puts 'Enter the tittle of the book:'
+      puts 'Enter the title of the book:'
       title = gets.chomp
       puts 'Enter the author of the book:'
       author = gets.chomp
@@ -39,20 +39,19 @@ def main
       puts 'Enter the ID of the book to return:'
       book_id = gets.chomp.to_i
       puts 'Enter the date the rental will end (yyyy-mm-dd):'
+      date = gets.chomp
       library.return_book(person_id, book_id, date)
     when 5
       puts 'Enter the ID of the person to list rentals for:'
       person_id = gets.chomp.to_i
       library.list_rentals_by_person(person_id)
     when 6
+      puts 'Goodbye!'
       break
-      puts "Goodbye!"
     else
       puts 'Invalid option, please try again'
     end
   end
 end
 
-app = App.new
 main
-app.run
