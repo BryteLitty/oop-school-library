@@ -46,6 +46,7 @@ def main
       library.list_rentals_by_person(person_id)
     when 6
       break
+      puts "Goodbye!"
     else
       puts 'Invalid option, please try again'
     end

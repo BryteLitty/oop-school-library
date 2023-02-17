@@ -36,14 +36,16 @@ class App
   end
 
   def create_person(name, age, type)
-    if type == 'student'
+    case type
+    when 'student'
       @people << Student.new(age, 'A', name: name)
-    elsif type == 'teacher'
+    when 'teacher'
       @people << Teacher.new(age, 'Math', name: name)
     else
       puts "Invalid type: #{type}"
     end
   end
+
 
   def create_book(title, author, date)
     @books << Book.new(title, author, date)
