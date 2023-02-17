@@ -45,6 +45,14 @@ def list_rentals(library)
   library.list_rentals_by_person(person_id)
 end
 
+def list_all_books(library)
+  library.list_all_books
+end
+
+def invalid_option
+  puts 'Invalid option, please try again'
+end
+
 def main
   library = App.new
 
@@ -54,7 +62,7 @@ def main
 
     case input
     when 1
-      library.list_all_books
+      list_all_books(library)
     when 2
       add_book(library)
     when 3
@@ -67,7 +75,7 @@ def main
       puts 'Goodbye!'
       break
     else
-      puts 'Invalid option, please try again'
+      invalid_option
     end
   end
 end
