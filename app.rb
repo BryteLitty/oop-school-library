@@ -46,7 +46,6 @@ class App
     end
   end
 
-
   def create_book(title, author, date)
     @books << Book.new(title, author, date)
   end
@@ -66,7 +65,7 @@ class App
   end
 
   def return_book(book_id, person_id, return_date)
-    rental = @rentals.find { |rental| rental.book.id == book_id && rental.person.id == person_id && rental.return_date.nil? }
+    rental = @rentals.find { |r| r.book.id == book_id && r.person.id == person_id && r.return_date.nil? }
     if rental.nil?
       puts "Invalid return: person id #{person_id} or book id #{book_id} not found or rental already returned"
     else
