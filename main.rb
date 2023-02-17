@@ -53,31 +53,35 @@ def invalid_option
   puts 'Invalid option, please try again'
 end
 
-def main
+def handle_input(library, input)
+  case input
+  when 1
+    list_all_books(library)
+  when 2
+    add_book(library)
+  when 3
+    rent_book(library)
+  when 4
+    return_book(library)
+  when 5
+    list_rentals(library)
+  when 6
+    puts 'Goodbye!'
+    return false
+  else
+    invalid_option
+  end
+  true
+end
+
+def run_library_app
   library = App.new
 
   loop do
     print_menu
     input = gets.chomp.to_i
-
-    case input
-    when 1
-      list_all_books(library)
-    when 2
-      add_book(library)
-    when 3
-      rent_book(library)
-    when 4
-      return_book(library)
-    when 5
-      list_rentals(library)
-    when 6
-      puts 'Goodbye!'
-      break
-    else
-      invalid_option
-    end
+    break unless handle_input(library, input)
   end
 end
 
-main
+run_library_app
