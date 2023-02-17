@@ -2,10 +2,10 @@
 class Book
   attr_reader :title, :author, :date, :id
 
-  @id = 0
+  $inital_id = 0
   def initialize(title, author, date)
-    @id += 1
-    @id = @id
+    inital_id += 1
+    @id = inital_id
     @title = title
     @author = author
     @date = date
