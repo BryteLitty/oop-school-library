@@ -1,12 +1,15 @@
 # book class
+
+require 'date'
+
 class Book
   attr_reader :title, :author, :date, :id
 
-  def initialize(title, author, date)
+  def initialize(title, author)
     @id = 0
     @title = title
     @author = author
-    @date = date
+    @date = Date.today
     @rentals = []
   end
 
