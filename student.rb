@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-require './person'
+require_relative 'person'
 
 # Create class Student
 class Student < Person
