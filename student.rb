@@ -1,19 +1,20 @@
 require_relative 'person'
 
-# inherit form person
+# Create class Student
 class Student < Person
-  attr_accessor :classroom
+  attr_reader :classroom
 
-  def initialize(age, _classroom, parent_permission: true, name: 'Unknown')
-    super(age, name: name, parent_permission: parent_permission)
+  def initialize(classroom, name, age = 'Unknown', parent_permission: true)
+    super(name, age, parent_permission: parent_permission)
     @classroom = classroom
   end
 
-  def belongs_to_classroom?(classroom)
-    @classroom == classroom
+  def classroom=(classroom)
+    @classroom = classroom
+    classroom.students << self unless classroom.students.include?(self)
   end
 
-  def play_hooky
-    '¯\\(ツ)/¯'
+  def play_hoocky
+    '¯(ツ)/¯'
   end
 end

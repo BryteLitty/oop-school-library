@@ -1,16 +1,23 @@
+# frozen_string_literal: true
+
 # book class
+
+require 'date'
+
 class Book
-  attr_accessor :title, :author, :rentals
+  attr_reader :title, :author, :date, :id
 
   def initialize(title, author)
+    @id = 0
     @title = title
     @author = author
+    @date = Date.today
     @rentals = []
   end
 
-  def add_rental(book, date)
-    rental = Rental.new(date, book, self)
+  def add_rental(date, person)
+    rental = Rental.new(date, self, person)
     @rentals << rental
-    book.rentals << rental
+    person.add_rental(rental)
   end
 end

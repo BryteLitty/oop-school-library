@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require_relative 'person'
 
-# inherit form person
+# Create class Teacher
 class Teacher < Person
-  attr_accessor :specialization
+  attr_reader :specialization
 
-  def initialize(age, specialization, parent_permission: true, name: 'Unknown')
-    super(age, name: name, parent_permission: parent_permission)
+  def initialize(specialization, age, name = 'Unknown', parent_permission: true)
+    super(age, name, parent_permission: parent_permission)
     @specialization = specialization
   end
 
