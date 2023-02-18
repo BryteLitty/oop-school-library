@@ -1,4 +1,4 @@
-require './person'
+require_relative 'person'
 
 # Create class Teacher
 class Teacher < Person
